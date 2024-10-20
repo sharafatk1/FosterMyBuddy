@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Foster My Buddy</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="foster.html">Foster</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Login</h2>
+        <form id="login-form" action="login_process.php" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <div>
+                <input type="checkbox" id="remember-me" name="remember">
+                <label for="remember-me">Remember Me</label>
+            </div>
+
+            <!-- Login Button -->
+            <button type="submit">Login</button>
+            <div id="error-message" style="color: red;"></div> <!-- For displaying errors -->
+
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Foster My Buddy</p>
+    </footer>
+    <script src="login.js"></script>
+</body>
+</html>

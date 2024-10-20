@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pet Adoption</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Foster My Buddy</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="foster.html">Foster</a></li>
+                <li><a href="adopt.html">Adopt</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Welcome to Our Pet Fostering and Adoption Center</h2>
+        <div class="content">
+            <div class="slider">
+                <div class="slides">
+                    <img src="taco.jfif" alt="Adoptable Pet 1" class="slide">
+                    <img src="cats.jpg" alt="Adoptable Pet 2" class="slide">
+                    <img src="dog.jpg" alt="Adoptable Pet 3" class="slide">
+                </div>
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+            </div>
+            <div class="text">
+                <p>Welcome to Foster My Buddy, where love meets a second chance! Our mission is to connect caring individuals with furry friends in need of a forever home. Whether you’re looking to adopt a loyal companion or provide a safe haven through fostering, you play a vital role in transforming lives. Explore our heartwarming stories, browse our adorable adoptable pets, and discover how you can make a difference today. Together, we can create a community filled with compassion, hope, and endless tail wags!</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2024 Foster My Buddy</p>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.slide');
+            currentSlide += direction;
+
+            // Loop around the slides
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            }
+
+            // Move the slides
+            const offset = -currentSlide * 100; // Each slide is 100% wide
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+        }
+
+        // Automatically change the slide every 3 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+</body>
+</html>
